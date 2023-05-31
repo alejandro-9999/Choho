@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\tercero;
+use App\Models\Tercero;
 use Illuminate\Http\Request;
 
 class TerceroController extends Controller
@@ -14,7 +14,9 @@ class TerceroController extends Controller
      */
     public function index()
     {
-        //
+        $terceros = Tercero::all();
+
+        return response()->json($terceros);
     }
 
     /**
@@ -35,7 +37,9 @@ class TerceroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tercero = Tercero::create($request->all());
+
+        return response()->json($tercero, 201);
     }
 
     /**
@@ -82,4 +86,7 @@ class TerceroController extends Controller
     {
         //
     }
+
+
+
 }

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\TerceroController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +30,14 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
 
+
+Route::post('/terceros', [TerceroController::class, 'store']);
+Route::get('/terceros', [TerceroController::class, 'index']);
+
+
+
+Route::post('/pedidos', [PedidoController::class, 'store']);
+Route::get('/pedidos', [PedidoController::class, 'index']);
 
 
 

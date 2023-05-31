@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pedido;
+use App\Models\Pedido;
 use Illuminate\Http\Request;
 
 class PedidoController extends Controller
@@ -14,7 +14,9 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        //
+        $pedidos = Pedido::all();
+
+        return response()->json($pedidos);
     }
 
     /**
@@ -35,7 +37,9 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pedido = Pedido::create($request->all());
+
+        return response()->json($pedido, 201);
     }
 
     /**
