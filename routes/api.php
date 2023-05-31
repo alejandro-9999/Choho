@@ -26,18 +26,17 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     // Otras rutas protegidas por autenticación
+
 });
-
-
 
 
 Route::post('/terceros', [TerceroController::class, 'store']);
 Route::get('/terceros', [TerceroController::class, 'index']);
 
-
-
 Route::post('/pedidos', [PedidoController::class, 'store']);
 Route::get('/pedidos', [PedidoController::class, 'index']);
+
+
 
 
 
